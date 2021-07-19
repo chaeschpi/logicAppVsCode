@@ -12,7 +12,8 @@
                     },
                     "method": "post",
                     "body": {
-                        "timestamp": "@utcNow()"
+                        "timeStamp": "@utcNow()",
+                        "initiatior": "dkas App"
                     },
                     "path": "/datasets/@{encodeURIComponent(encodeURIComponent('1x8346-jg1HjYNLz7wVWQue9-J-H9iubmda5v__8SfnE'))}/tables/@{encodeURIComponent(encodeURIComponent('0'))}/items"
                 },
@@ -41,7 +42,9 @@
             "manual": {
                 "type": "Request",
                 "kind": "Http",
-                "inputs": {}
+                "inputs": {
+                    "method": "GET"
+                }
             }
         },
         "contentVersion": "1.0.0.0",
