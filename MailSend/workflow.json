@@ -13,7 +13,8 @@
                     "method": "post",
                     "body": {
                         "timeStamp": "@utcNow()",
-                        "initiatior": "dkas App"
+                        "initiatior": "dkas App",
+                        "platform": "local"
                     },
                     "path": "/datasets/@{encodeURIComponent(encodeURIComponent('1x8346-jg1HjYNLz7wVWQue9-J-H9iubmda5v__8SfnE'))}/tables/@{encodeURIComponent(encodeURIComponent('0'))}/items"
                 },
