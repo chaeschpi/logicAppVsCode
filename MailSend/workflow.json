@@ -1,10 +1,51 @@
 {
-  "definition": {
-    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
-    "actions": {},
-    "contentVersion": "1.0.0.0",
-    "outputs": {},
-    "triggers": {}
-  },
-  "kind": "Stateful"
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Insert_row": {
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "referenceName": "googlesheet"
+                        }
+                    },
+                    "method": "post",
+                    "body": {
+                        "timestamp": "@utcNow()"
+                    },
+                    "path": "/datasets/@{encodeURIComponent(encodeURIComponent('1x8346-jg1HjYNLz7wVWQue9-J-H9iubmda5v__8SfnE'))}/tables/@{encodeURIComponent(encodeURIComponent('0'))}/items"
+                },
+                "runAfter": {},
+                "metadata": {
+                    "1x8346-jg1HjYNLz7wVWQue9-J-H9iubmda5v__8SfnE": "/TimeStamps"
+                }
+            },
+            "Response": {
+                "type": "Response",
+                "kind": "http",
+                "inputs": {
+                    "statusCode": 200,
+                    "schema": {
+                        "status": "all Done"
+                    }
+                },
+                "runAfter": {
+                    "Insert_row": [
+                        "Succeeded"
+                    ]
+                }
+            }
+        },
+        "triggers": {
+            "manual": {
+                "type": "Request",
+                "kind": "Http",
+                "inputs": {}
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {}
+    },
+    "kind": "Stateful"
 }

@@ -1,0 +1,18 @@
+{
+  "managedApiConnections": {
+    "googlesheet": {
+      "api": {
+        "id": "/subscriptions/66c08341-7fc4-4e8a-ae2e-c180201b6b80/providers/Microsoft.Web/locations/switzerlandnorth/managedApis/googlesheet"
+      },
+      "connection": {
+        "id": "/subscriptions/66c08341-7fc4-4e8a-ae2e-c180201b6b80/resourceGroups/rg-chn-dkas-logicAppVsCode/providers/Microsoft.Web/connections/googlesheet"
+      },
+      "connectionRuntimeUrl": "https://f1671138cb21f2d0.15.common.logic-switzerlandnorth.azure-apihub.net/apim/googlesheet/800783c299e149d8887c3357866053e3/",
+      "authentication": {
+        "type": "Raw",
+        "scheme": "Key",
+        "parameter": "@appsetting('googlesheet-connectionKey')"
+      }
+    }
+  }
+}
